@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="main.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+<div class="calc_form">
+    <div class="calc_settings">
+      <div class="calc_field">
+        <div class="calc_head">Взнос (страховая премия)</div>
+        <input id="usd_field" value="20 000 $" type="text" placeholder="20000" oninput="input_change(this.value);" onblur="input_blur(this.value);" onfocus="input_onfocus(this.value);">
+        <div class="calc_info"><span>1 000 – 40 000 $</span><span id="rubl">~ 2 774 504 ₽</span></div>
+        <input type="range" value="20000" id="usd_slider" name="usd_slider" oninput="slider_change(this.value);" min="1000" max="40000" step="100"> 
+      </div>
+      
+      <div class="calc_switch-field">
+        <input type="radio" id="radio-one" onclick="toggle_change(this.value);" name="switch" value="3" checked/>
+        <label for="radio-one">3<br>месяца</label>
+        <input type="radio" onclick="toggle_change(this.value);" id="radio-two" name="switch" value="12" />
+        <label for="radio-two">12<br>месяцев</label>
+        <input type="radio" onclick="toggle_change(this.value);" id="radio-three" name="switch" value="24" />
+        <label for="radio-three">24<br>месяца</label>
+      </div>
+    </div>
+
+    <div class="calc_devider">
+      <div class="calc_arrow"></div>
+      <div class="calc_img_arrow"></div>
+    </div>
+    
+    <div class="calc_income_block">
+      <div class="calc_income">
+        <div class="calc_head">Выплата</div>
+          <p class="calc_result" id="result">20 100 $</p>
+        <div class="calc_info"><span id="income">+ 100 $ (+0,5%)</span></div>
+      </div>
+      
+      <button class="calc_button" onclick="window.location.href='https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD'">
+        Оформить
+      </button>
+    </div>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

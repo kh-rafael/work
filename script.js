@@ -13,6 +13,8 @@ $.getJSON('https://www.cbr-xml-daily.ru/daily_json.js', function(data) {
     console.log(data);
 });
 
+
+changee
 //usd_toggle = document.getElementById("");
 
 function slider_change(usd)

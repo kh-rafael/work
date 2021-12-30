@@ -13,11 +13,7 @@ $.getJSON('https://www.cbr-xml-daily.ru/daily_json.js', function(data) {
     console.log(data);
 });
 
-
-changee
-//usd_toggle = document.getElementById("");
-
-function slider_change(usd)
+// function slider_change(usd)
 {
   usd = usd.replace(/[^0-9]/g, '');
   usd_field.value = usd.toLocaleString()+" $";

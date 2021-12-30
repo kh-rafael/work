@@ -1,5 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="script.js"></script>
+
 <div class="calc_form">
     <div class="calc_settings">
       <div class="calc_field">
@@ -36,11 +36,10 @@
       </button>
     </div>
 
-</div>
-
-<style>
-
-.calc_form *
+  </div>
+  
+  <style>
+ .calc_form *
  {
   padding:0;
   margin:0;
@@ -181,6 +180,10 @@
 
 @media (max-width: 1200px) {
 
+   .calc_devider
+  {
+    display: none;
+  }
 
   .calc_field
   {
@@ -189,7 +192,7 @@
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 959px) {
 
   .calc_switch-field
   {
@@ -254,11 +257,6 @@
 
 @media (max-width: 640px) {
 
-   .calc_devider
-  {
-    display: auto;
-  }
-
   .calc_income_block
   {
     width: 100%;
@@ -273,14 +271,10 @@
     height: 40px;
     padding: 0;
   }
+
 }
 
-@media (max-width: 460px) {
-
-   .calc_devider
-  {
-    display: none;
-  }
+@media (max-width: 480px) {
 
   .calc_income_block
   {
@@ -486,7 +480,6 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #50287D;
 }
-
 </style>
 
 <script>
@@ -506,7 +499,9 @@ $.getJSON('https://www.cbr-xml-daily.ru/daily_json.js', function(data) {
     console.log(data);
 });
 
-// function slider_change(usd)
+//usd_toggle = document.getElementById("");
+
+function slider_change(usd)
 {
   usd = usd.replace(/[^0-9]/g, '');
   usd_field.value = usd.toLocaleString()+" $";

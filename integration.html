@@ -5,8 +5,8 @@
       <div class="calc_field">
         <div class="calc_head">Взнос (страховая премия)</div>
         <input id="usd_field" value="20 000 $" type="text" placeholder="Взнос в $" oninput="input_change(this.value);" onblur="input_blur(this.value);" onfocus="input_onfocus(this.value);">
-        <div class="calc_info"><span>1 000 – 40 000 $</span><span id="rubl"></span></div>
-        <input type="range" value="20000" id="usd_slider" name="usd_slider" oninput="slider_change(this.value);" min="1000" max="40000" step="100"> 
+        <div class="calc_info"><span>1 200 – 40 000 $</span><span id="rubl"></span></div>
+        <input type="range" value="20000" id="usd_slider" name="usd_slider" oninput="slider_change(this.value);" min="1200" max="40000" step="100"> 
       </div>
       
       <div class="calc_switch-field">
@@ -536,10 +536,10 @@ function input_change(usd)
   var result_c;
   var income_c;
   
-  if (usd<1000)
+  if (usd<1200)
     {
       result.style.color = "red";
-      result.innerHTML = "Минимальный взнос 1000$";
+      result.innerHTML = "Минимальный взнос 1200$";
       income.innerHTML = "";
       rubl.innerHTML = "~"+Math.floor(usd*today_usd_value).toLocaleString()+" ₽";
     }
@@ -565,9 +565,9 @@ function input_change(usd)
 
 function input_blur(usd)
 {
-  if (usd<1000)
+  if (usd<1200)
     {
-      usd=1000;
+      usd=1200;
       income_c = Math.floor(usd*duration*year_income/12,-1);
       result_c = usd+income_c;
 
@@ -594,7 +594,7 @@ function input_blur(usd)
   else
     {
        usd_field.value = parseInt(usd).toLocaleString()+" $";
-    }
+    } 
       result.style.color = "#28323C";
 }
 

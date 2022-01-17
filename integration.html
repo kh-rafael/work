@@ -1,6 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="calc_form">
-
     <div class="calc_settings">
       <div class="calc_field">
         <div class="calc_head">Взнос (страховая премия)</div>
@@ -30,11 +29,8 @@
           <p class="calc_result" id="result">20 100 $</p>
         <div class="calc_info"><span id="income">+ 100 $ (+0,5%)</span></div>
       </div>
-      
-      <button class="calc_button" onclick="window.location.href='https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD'">
-        Оформить
-      </button>
-    </div>
+      <input type="button" onclick="to_order()" class="calc_button" value="Оформить">
+    </div>  
 </div>
 
 <style type="text/css">
@@ -276,6 +272,7 @@
   .calc_button{
     height: 40px;
     padding: 0;
+    margin: 0;
   }
 }
 
@@ -607,7 +604,6 @@ function toggle_change(dur)
 {
   var usd = (usd_field.value).replace(/[^0-9]/g, '');
   usd = parseInt(usd);
-
   duration=dur;
   
   income_c = usd*dur*year_income/12;
@@ -616,5 +612,12 @@ function toggle_change(dur)
   result.innerHTML = Math.floor(result_c).toLocaleString()+" $";
   income.innerHTML = "+ " + Math.floor(income_c).toLocaleString() + " $ (+" + dur*year_income*100/12 + "%)";
 };
+
+function to_order()
+{
+  var usd = usd_field.value.replace(/[^0-9]/g, '');
+  var adr = "https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD&sum="+String(usd)+"&dur="+String(duration);
+  window.location.href=adr;
+}
 
 </script>

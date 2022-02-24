@@ -614,10 +614,22 @@ function toggle_change(dur)
   income.innerHTML = "+ " + Math.floor(income_c).toLocaleString() + " $ (+" + dur*year_income*100/12 + "%)";
 };
 
+//to_order()
+//{
+//  var usd = usd_field.value.replace(/[^0-9]/g, '');
+//  var adr = "https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD&sum="+String(usd)+"&dur="+String(duration);
+//  window.location.href=adr;
+//}
+
 function to_order()
 {
   var usd = usd_field.value.replace(/[^0-9]/g, '');
-  var adr = "https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD&sum="+String(usd)+"&dur="+String(duration);
+  //var ref = document.location.href.split('?')[1];
+  if ( typeof ref === 'undefined')
+  {
+    ref='';
+  }
+  var adr = "https://order.renlife.ru/policy/?programBrief=NSZH_VALUABLE_ASSET_SMART_USD&sum="+String(usd)+"&dur="+String(duration)+"&utm_source=renlife&utm_medium=organic&utm_campaign=main&utm_content=product_page;"
   window.location.href=adr;
 }
 
